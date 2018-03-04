@@ -353,20 +353,20 @@ sub launch_msf_scans {
 		}
 
 		# add a few left out modules
-		push(%ports['445'], "scanner/smb/smb_version");
-		push(%ports['1099'], "scanner/misc/java_rmi_server");
-		push(%ports['548'], "scanner/afp/afp_server_info");
-		push(%ports['523'], "scanner/db2/discovery");
-		push(%ports['3500'], "scanner/emc/alphastor_librarymanager");
-		push(%ports['3000'], "scanner/emc/alphastor_devicemanager");
-		push(%ports['3050'], "scanner/misc/ib_service_mgr_info");
-		push(%ports['6379'], "scanner/misc/redis_server");
-		#push(%ports['135'], "scanner/dcerpc/endpoint_mapper");
-		#push(%ports['111'], "scanner/misc/sunrpc_portmapper");
-		push(%ports['8834'], "scanner/nessus/nessus_xmlrpc_ping");
-		push(%ports['5631'], "scanner/pcanywhere/pcanywhere_tcp");
-		push(%ports['5985'], "scanner/winrm/winrm_auth_methods");
-		push(%ports['2222'], "scanner/ssh/ssh_version"); # I've seen this cleverness before
+		push(%ports['445'], "auxiliary/scanner/smb/smb_version");
+		push(%ports['1099'], "auxiliary/scanner/misc/java_rmi_server");
+		push(%ports['548'], "auxiliary/scanner/afp/afp_server_info");
+		push(%ports['523'], "auxiliary/scanner/db2/discovery");
+		push(%ports['3500'], "auxiliary/scanner/emc/alphastor_librarymanager");
+		push(%ports['3000'], "auxiliary/scanner/emc/alphastor_devicemanager");
+		push(%ports['3050'], "auxiliary/scanner/misc/ib_service_mgr_info");
+		push(%ports['6379'], "auxiliary/scanner/misc/redis_server");
+		push(%ports['135'], "auxiliary/scanner/dcerpc/endpoint_mapper");
+		push(%ports['111'], "auxiliary/scanner/misc/sunrpc_portmapper");
+		push(%ports['8834'], "auxiliary/scanner/nessus/nessus_xmlrpc_ping");
+		push(%ports['5631'], "auxiliary/scanner/pcanywhere/pcanywhere_tcp");
+		push(%ports['5985'], "auxiliary/scanner/winrm/winrm_auth_methods");
+		push(%ports['2222'], "auxiliary/scanner/ssh/ssh_version"); # I've seen this cleverness before
 
 		[$queue append: "[*] Launching TCP scan"];
 		[$queue addCommand: $null, "use auxiliary/scanner/portscan/tcp"];
